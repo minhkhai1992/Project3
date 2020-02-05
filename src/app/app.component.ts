@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'Project3';
+  showSecret = false;
+  log = [];
+
+  constructor() {
+    setTimeout(() => {}, 2000);
+  }
+
+  onToggleDetails() {
+    this.showSecret = !this.showSecret;
+    this.log.push(new Date());
+  }
 }
